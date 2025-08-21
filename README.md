@@ -8,11 +8,11 @@ Current recommended procedure is to tag according to the `rustc` version that is
 
 Example:
 
-`
+```
 podman build --rm -t steam-builder:v1.89 .
 podman tag steam-builder:v1.89 steam-builder:latest
 podman tag steam-builder:v1.89 steam-builder:stable
-`
+```
 
 ## Compiling a project
 
@@ -22,18 +22,18 @@ also be mounted in order to keep the executable).
 
 Example:
 
-`
+```
 podman run -v $HOME/src/my_rust_project:/src -v $HOME/release:/output -it steam-builder:v1.89
-`
+```
 
 The image will accept any one of the following commands:
 
-`
+```
 release		    Run a release build, equivalent to 'cargo build --release'
 debug		    Run a debug build, equivalent to 'cargo build'
 clean		    Clean build artifacts (only useful if using persistent builds)
 -h, --help	    Print this help message
 -V, --version	Output the Rust compiler version (rustc --version)
-`
+```
 
 The default command is `release`.
