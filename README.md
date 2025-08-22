@@ -50,13 +50,13 @@ in this scenario cargo will build the project in the workspace as defined in you
 Example:
 
 ```
-podman run -v $HOME/src/my_rust_project:/src -it steam-builder:v1.89
+podman run -v $HOME/src/my_rust_project:/src:z -it steam-builder:v1.89
 ```
 
 or
 
 ```
-podman run -v $HOME/src/my_rust_project:/src -it steam-builder:v1.89 debug
+podman run -v $HOME/src/my_rust_project:/src:z -it steam-builder:v1.89 debug
 ```
 
 ### Without persistence for reproducible builds
@@ -66,6 +66,6 @@ This functions by changing the cargo build target directory to an internal direc
 persistence.
 
 ```
-podman run -v $HOME/src/my_rust_project:/src -v $HOME/release:/output -it steam-builder:v1.89 release --clean
+podman run -v $HOME/src/my_rust_project:/src:z -v $HOME/release:/output:z -it steam-builder:v1.89 release --clean
 ```
 
