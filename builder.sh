@@ -15,9 +15,9 @@ Build script entrypoint used to automatically run cargo in the Steam Linux SDK O
 )
 
 WORKSPACE_ERROR=$(cat <<!
-Supported Rust workspace not available in $(pwd)
+A supported Rust workspace is not available in $(pwd)
 Verify your project directory is volume mounted to $(pwd)
-with correct SELinux context applied (usually append :z to the volume mount
+with correct SELinux labels applied (usually append :z to the volume mount
 command when using podman).
 !
 )
