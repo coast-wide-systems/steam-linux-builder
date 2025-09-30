@@ -1,4 +1,4 @@
-from registry.gitlab.steamos.cloud/steamrt/sniper/sdk:3.0.20250723.149183
+from registry.gitlab.steamos.cloud/steamrt/sniper/sdk:3.0.20250826.159138
 
 ENV OUTPUT_DIR=/output
 ENV DATA_DIR=/data
