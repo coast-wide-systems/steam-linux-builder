@@ -1,9 +1,9 @@
-from registry.gitlab.steamos.cloud/steamrt/sniper/sdk:3.0.20250723.149183
+from registry.gitlab.steamos.cloud/steamrt/sniper/sdk:3.0.20250826.159138
 
 ENV OUTPUT_DIR=/output
 ENV DATA_DIR=/data
 ENV SRC_DIR=/src
-ENV RUST_VERSION=1.90.0
+ENV RUST_VERSION=1.91.0
 
 COPY --chmod=755 ./builder.sh /builder.sh
 
