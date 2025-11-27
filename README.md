@@ -1,7 +1,7 @@
 # Rust (bevy) Builder for the Steam Linux SDK (sniper)
 
-This is a helper image to create native Linux builds targeting the Steam "sniper" (v3) Linux runtime
-using Steam's Linux SDK v3.
+This is a helper image to create native Linux builds targeting the Steam Linux runtime
+using Steam's Linux SDK v4.
 
 The current use case is to volume mount your Rust project to the image's /src directory and allow the
 build script to compile the project directly. It's recommended to run `cargo clean` prior to compiling,
@@ -10,6 +10,27 @@ particularly when to creating production/release candidate builds.
 This image is intended to be used with podman's rootless environment; using Docker or podman rootful
 may result in unexpected permissions set in the build directory when re-using build artifacts (eg,
 when volume mounting the full Rust workspace) and is not recommended.
+
+## Image hosting
+
+Latest builds of this image are hosted on [quay.io](https://quay.io/repository/cws/steam-linux-builder?tab=tags) and can be pulled directly from there in, for example, your Makefile.
+
+```
+podman pull quay.io/cws/steam-linux-builder:latest
+```
+
+Example usage in a Makefile:
+```
+linux-steam:
+        @echo "Building SteamOS (Linux) executable..."
+        @mkdir -p ./target/release
+        @if command -v podman >/dev/null 2>&1; then \
+                podman run -v .:/src:z -v ./target/release:/output:z -t quay.io/cws/steam-linux-builder:latest release; \
+        else \
+                $(CARGO) build --release; \
+        fi
+        @echo "✓ Linux executable built"
+```
 
 ## Building the image locally
 
