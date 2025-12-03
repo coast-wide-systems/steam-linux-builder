@@ -1,4 +1,4 @@
-from registry.gitlab.steamos.cloud/steamrt/steamrt4/sdk:4.0.20251117.183306
+from registry.gitlab.steamos.cloud/steamrt/steamrt4/sdk:4.0.20251202.187503
 
 ENV OUTPUT_DIR=/output
 ENV DATA_DIR=/data
