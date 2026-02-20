@@ -1,4 +1,4 @@
-# Rust (bevy) Builder for the Steam Linux SDK (sniper)
+# Rust (bevy) Builder for the Steam Linux SDK
 
 This is a helper image to create native Linux builds targeting the Steam Linux runtime
 using Steam's Linux SDK v4.
