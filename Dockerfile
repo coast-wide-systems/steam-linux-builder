@@ -1,9 +1,9 @@
-from registry.gitlab.steamos.cloud/steamrt/steamrt4/sdk:4.0.20260119.200228
+from registry.gitlab.steamos.cloud/steamrt/steamrt4/sdk:4.0.20260415.225012
 
 ENV OUTPUT_DIR=/output
 ENV DATA_DIR=/data
 ENV SRC_DIR=/src
-ENV RUST_VERSION=1.93.1
+ENV RUST_VERSION=1.96.0
 
 COPY --chmod=755 ./builder.sh /builder.sh
 
